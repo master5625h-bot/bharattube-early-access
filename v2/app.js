@@ -19,7 +19,7 @@ const st=$('st'),lg=$('lg');
 Object.keys(STATES).forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;st.appendChild(o)});
 LANGS.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;lg.appendChild(o)});
 // Map + vote rendering
-function proj(lat,lon){return [(lon-68)*12,(37-lat)*12]}
+function proj(lat,lon){return [(lon-68)*12,(37.2-lat)*12]}
 function renderMap(states){
  const g=$('dots');g.innerHTML='';const chips=$('statechips');chips.innerHTML='';
  const entries=Object.entries(states).filter(([s,c])=>STATES[s]&&c>0).sort((a,b)=>b[1]-a[1]);
