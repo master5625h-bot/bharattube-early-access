@@ -8,7 +8,6 @@ body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-
 .o3{width:240px;height:240px;background:#bfdbfe;bottom:-90px;left:22%;animation-delay:-13s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-36px,44px) scale(1.12)}}
 .wrap{max-width:600px;margin:0 auto;padding:14px 20px 64px}
-.wrap::before{content:"";display:block;height:6px;border-radius:99px;background:linear-gradient(90deg,var(--saffron) 0 33%,#1d4ed8 33% 66%,var(--green) 66% 100%);margin-bottom:26px}
 .hero{text-align:center;margin-bottom:34px}
 .logo{position:relative;width:104px;height:104px;margin:6px auto 14px}
 .logo .mark{width:104px;height:104px;border-radius:30px;object-fit:cover;position:relative;z-index:1;box-shadow:0 10px 34px rgba(249,115,22,.35)}
@@ -26,8 +25,7 @@ h1{font-family:Poppins,system-ui,sans-serif;font-size:33px;line-height:1.25;marg
 .sect{font-family:Poppins,system-ui,sans-serif;font-size:20px;margin:0 0 14px;text-align:center}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
 @media(max-width:480px){.grid{grid-template-columns:1fr}}
-.fcard{position:relative;background:var(--card);border-radius:20px;padding:20px 18px;box-shadow:0 8px 26px -12px rgba(28,25,23,.18);border-top:5px solid var(--ac,#f97316);transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s ease;will-change:transform}
-.fcard:nth-child(1){--ac:#f97316}.fcard:nth-child(2){--ac:#15803d}.fcard:nth-child(3){--ac:#1d4ed8}.fcard:nth-child(4){--ac:#db2777}
+.fcard{position:relative;background:var(--card);border-radius:20px;padding:20px 18px;box-shadow:0 8px 26px -12px rgba(28,25,23,.18);transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s ease;will-change:transform}
 .fcard:hover{box-shadow:0 20px 40px -16px rgba(28,25,23,.28)}
 .ico{font-size:30px;margin-bottom:10px;transform:translateZ(30px)}
 .fcard b{display:block;font-size:16px;margin-bottom:5px;transform:translateZ(24px)}
