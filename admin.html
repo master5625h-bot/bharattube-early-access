@@ -7,9 +7,9 @@
 </div><script src="config.js"></script><script>
 const C=window.BT_CONFIG,$=i=>document.getElementById(i);let rows=[];
 $('go').onclick=async()=>{$('m').textContent='';
- const r=await fetch(C.SUPABASE_URL+'/rest/v1/rpc/admin_list',{method:'POST',headers:{apikey:C.SUPABASE_ANON_KEY,Authorization:'Bearer '+C.SUPABASE_ANON_KEY,'Content-Type':'application/json'},body:JSON.stringify({p_pass:$('p').value})});
- if(!r.ok){$('m').textContent='Password galat hai.';return}
- rows=await r.json();$('lg').classList.add('hide');$('dash').classList.remove('hide');$('c').textContent=rows.length;
+ let j;try{const r=await fetch(C.API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'list',pass:$('p').value})});j=await r.json()}catch(e){$('m').textContent='Network error.';return}
+ if(!j.ok){$('m').textContent='Password galat hai.';return}
+ rows=j.rows;$('lg').classList.add('hide');$('dash').classList.remove('hide');$('c').textContent=rows.length;
  const tb=$('t').tBodies[0];rows.forEach(x=>{const tr=tb.insertRow();[x.id,x.name,x.email,new Date(x.created_at).toLocaleString('en-IN')].forEach(v=>tr.insertCell().textContent=v)})};
 $('dl').onclick=()=>{const q=s=>'"'+String(s).replace(/"/g,'""').replace(/^([=+\-@])/,"'$1")+'"';
  const csv='id,name,email,created_at\n'+rows.map(x=>[x.id,x.name,x.email,x.created_at].map(q).join(',')).join('\n');
